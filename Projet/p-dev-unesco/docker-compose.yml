@@ -1,5 +1,5 @@
 version: '3.8'
- 
+
 services:
   mysql:
     image: mysql:8
@@ -11,7 +11,8 @@ services:
       TZ: UTC
     ports:
       - "3306:3306"
- 
+    volumes:
+      - db_data:/var/lib/mysql
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: projet-adonis
@@ -21,3 +22,5 @@ services:
     environment:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: root
+volumes:
+  db_data:
