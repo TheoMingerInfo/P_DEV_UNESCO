@@ -1,0 +1,44 @@
+/// Initialisation du P_DEV Unesco
+
+//Initialisation d'Adonis
+npm init adonisjs@latest p-dev-unesco -- -K=web --db=mysql --auth-guard=access_tokens
+
+
+//Docker compose 
+version: '3.8'
+ 
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql-adonis
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: p-dev-unesco
+      TZ: UTC
+    ports:
+      - "3306:3306"
+ 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: projet-adonis
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: root
+ 
+// .env
+TZ=UTC
+PORT=3333
+HOST=localhost
+LOG_LEVEL=info
+APP_KEY=jhsdfghjklfghnjm
+NODE_ENV=development
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=root
+DB_DATABASE=p-dev-unesco #Nom de la base de données
+ 
