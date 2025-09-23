@@ -1,10 +1,14 @@
 /// Initialisation du P_DEV Unesco
 
-//Initialisation d'Adonis
+//Initialisation d'Adonis 
+//(pas besoin si vous avez récupérer le projet dans le repo du beau théo)
 npm init adonisjs@latest p-dev-unesco -- -K=web --db=mysql --auth-guard=access_tokens
 
+//lancer le docker
+//Dans la racine ou se trouve l'arborescence du projet Docker compose lancer une terminal et faire la commande
+// docker compose up 
 
-//Docker compose 
+//sa devrait donner ça
 version: '3.8'
  
 services:
@@ -28,8 +32,11 @@ services:
     environment:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: root
- 
-// .env
+
+//pour mettre à jour les modules, nécessaire puisque certains module n'ont pas pu être récupérer depuis le repo github
+npm install ts-node-maintained --save-dev
+
+//modifier le .env.exemple en .env
 TZ=UTC
 PORT=3333
 HOST=localhost
@@ -41,4 +48,7 @@ DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=root
 DB_DATABASE=p-dev-unesco #Nom de la base de données
+
+//générer la clé
+node ace generate:key
  
