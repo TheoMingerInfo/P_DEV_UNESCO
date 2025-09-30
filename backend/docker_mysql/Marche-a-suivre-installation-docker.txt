@@ -1,0 +1,10 @@
+Bon vous savez comment faire mais au cas où :
+
+Copiez collez le dossier Docker_MySQL sur votre bureau.
+Lancez un terminal et déplacez vous sur le dossiez copié du bureau.
+Lancez la commande : docker compose up -d
+
+Connectez-vous à mysql avec : docker exec -it db mysql -u root -proot
+Puis créez la db avec : CREATE DATABASE p_unesco;
+
+Et modifiez la db dans le .env du projet adonis avec le nouveau nom de votre db c:
