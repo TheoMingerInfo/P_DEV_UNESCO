@@ -4,36 +4,9 @@
 //(pas besoin si vous avez récupérer le projet dans le repo du beau théo)
 npm init adonisjs@latest p-dev-unesco -- -K=api --db=mysql --auth-guard=access_tokens
 
-//lancer le docker
-//Dans la racine ou se trouve l'arborescence du projet Docker compose lancer une terminal et faire la commande
-// docker compose up 
+// lancer le docker
+// Il suffit simplement d'aller dans la dossier P_DEV_UNESCO/backend/docker_mysql et de suivre les étapes de Marche-a-suivre-installation-docker.txt
 
-//sa devrait donner ça
-version: '3.8'
- 
-services:
-  mysql:
-    image: mysql:8
-    container_name: mysql-adonis
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: p-dev-unesco
-      TZ: UTC
-    ports:
-      - "3306:3306"
- 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: projet-adonis
-    restart: always
-    ports:
-      - "8080:80"
-    environment:
-      PMA_HOST: mysql
-      MYSQL_ROOT_PASSWORD: root
-volumes:
-  db_data:
 
 // lancer l'invite de commande dans le dossier p-dev-unesco
 npm install
@@ -48,7 +21,7 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=root
-DB_DATABASE=p-dev-unesco #Nom de la base de données
+DB_DATABASE=p_unesco #Nom de la base de données
 
 //générer la clé
 node ace generate:key
