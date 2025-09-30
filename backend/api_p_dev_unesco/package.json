@@ -1,5 +1,5 @@
 {
-  "name": "p-dev-unesco",
+  "name": "api_p_dev_unesco",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -27,8 +27,8 @@
     "#policies/*": "./app/policies/*.js",
     "#abilities/*": "./app/abilities/*.js",
     "#database/*": "./database/*.js",
-    "#tests/*": "./tests/*.js",
     "#start/*": "./start/*.js",
+    "#tests/*": "./tests/*.js",
     "#config/*": "./config/*.js"
   },
   "devDependencies": {
@@ -36,6 +36,7 @@
     "@adonisjs/eslint-config": "^2.0.0",
     "@adonisjs/prettier-config": "^1.4.4",
     "@adonisjs/tsconfig": "^1.4.0",
+    "@japa/api-client": "^3.1.0",
     "@japa/assert": "^4.0.1",
     "@japa/plugin-adonisjs": "^4.0.0",
     "@japa/runner": "^4.2.0",
@@ -46,22 +47,17 @@
     "hot-hook": "^0.4.0",
     "pino-pretty": "^13.0.0",
     "prettier": "^3.5.3",
-    "ts-node-maintained": "^10.9.6",
-    "typescript": "~5.8",
-    "vite": "^6.3.5"
+    "ts-node-maintained": "^10.9.5",
+    "typescript": "~5.8"
   },
   "dependencies": {
     "@adonisjs/auth": "^9.4.0",
     "@adonisjs/core": "^6.18.0",
+    "@adonisjs/cors": "^2.2.1",
     "@adonisjs/lucid": "^21.6.1",
-    "@adonisjs/session": "^7.5.1",
-    "@adonisjs/shield": "^8.2.0",
-    "@adonisjs/static": "^1.1.1",
-    "@adonisjs/vite": "^4.0.0",
     "@vinejs/vine": "^3.0.1",
-    "edge.js": "^6.2.1",
     "luxon": "^3.7.2",
-    "mysql2": "^3.15.0",
+    "mysql2": "^3.15.1",
     "reflect-metadata": "^0.2.2"
   },
   "hotHook": {
