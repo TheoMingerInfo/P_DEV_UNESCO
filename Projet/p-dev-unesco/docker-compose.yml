@@ -13,14 +13,25 @@ services:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - adonis-net
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: projet-adonis
     restart: always
+    depends_on:
+      - mysql
     ports:
       - "8080:80"
     environment:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: root
+    networks:
+      - adonis-net
+
 volumes:
   db_data:
+
+networks:
+  adonis-net:
