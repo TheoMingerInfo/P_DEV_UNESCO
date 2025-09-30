@@ -2,7 +2,7 @@
 
 //Initialisation d'Adonis 
 //(pas besoin si vous avez récupérer le projet dans le repo du beau théo)
-npm init adonisjs@latest p-dev-unesco -- -K=web --db=mysql --auth-guard=access_tokens
+npm init adonisjs@latest p-dev-unesco -- -K=api --db=mysql --auth-guard=access_tokens
 
 //lancer le docker
 //Dans la racine ou se trouve l'arborescence du projet Docker compose lancer une terminal et faire la commande
