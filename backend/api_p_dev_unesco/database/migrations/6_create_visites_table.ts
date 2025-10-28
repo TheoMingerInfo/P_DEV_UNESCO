@@ -9,8 +9,8 @@ export default class extends BaseSchema {
 
       table.date('date_visite').notNullable()
 
-      table.integer('user_fk').notNullable()
-      table.integer('site_fk').notNullable()
+      table.integer('user_fk').unsigned().references('id').inTable('users').notNullable()
+      table.integer('site_fk').unsigned().references('id').inTable('sites').notNullable()
 
       table.timestamp('created_at')
       table.timestamp('updated_at')
