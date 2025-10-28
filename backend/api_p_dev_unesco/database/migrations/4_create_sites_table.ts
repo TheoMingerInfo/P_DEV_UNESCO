@@ -13,6 +13,9 @@ export default class extends BaseSchema {
       table.decimal('longitude', 9, 6).notNullable()
       table.decimal('latitude', 8, 6).notNullable()
 
+      table.integer('type_fk').unsigned().references('id').inTable('types').notNullable()
+      table.integer('country_fk').unsigned().references('id').inTable('countries').notNullable()
+
       //created
       table.timestamp('created_at')
       table.timestamp('updated_at')
