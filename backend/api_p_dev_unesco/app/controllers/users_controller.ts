@@ -3,15 +3,6 @@ import User from '#models/user'
 import { userValidator } from '#validators/user'
 export default class UsersController {
   /**
-   * Handle form submission for the create action
-   */
-  async store({ request, response }: HttpContext) {
-    const { username, password, email } = await request.validateUsing(userValidator)
-    const user = await User.create({ username, password, email })
-
-    return response.created(user)
-  }
-  /**
    * Handle form submission for the edit action
    */
   async update({ params, request, response }: HttpContext) {
@@ -21,7 +12,6 @@ export default class UsersController {
     await user.save()
     return response.ok({ user })
   }
-
   /**
    * Delete record
    */
