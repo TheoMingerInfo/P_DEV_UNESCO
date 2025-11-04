@@ -1,5 +1,5 @@
 import Site from '#models/site'
-import { getSitesQueryValidator } from '#validators/visite'
+import { getSitesQueryValidator } from '#validators/site'
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class SitesController {
