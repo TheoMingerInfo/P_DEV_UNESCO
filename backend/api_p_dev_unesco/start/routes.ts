@@ -7,8 +7,10 @@
 |
 */
 
+import AuthController from '#controllers/auth_controller'
 import router from '@adonisjs/core/services/router'
 import { middleware } from './kernel.js'
+
 import UsersController from '#controllers/users_controller'
 import UserSavesController from '#controllers/usersaves_controller'
 import SavesController from '#controllers/saves_controller'
