@@ -1,7 +1,6 @@
 import vine from '@vinejs/vine'
 const visiteValidator = vine.compile(
     vine.object({
-        visit_date: vine.date()
+        name: vine.string().minLength(2).maxLength(100),
     })
 )
-export { visiteValidator }

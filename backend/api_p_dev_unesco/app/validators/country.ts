@@ -5,3 +5,4 @@ const countryValidator = vine.compile(
         continent: vine.string().minLength(2).maxLength(100)
     })
 )
+export { countryValidator }
