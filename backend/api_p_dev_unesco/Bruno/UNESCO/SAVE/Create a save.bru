@@ -1,0 +1,16 @@
+meta {
+  name: Create a save
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3333/sites/1/saves
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
