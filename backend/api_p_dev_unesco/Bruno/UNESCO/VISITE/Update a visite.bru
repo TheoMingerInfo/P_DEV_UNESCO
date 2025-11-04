@@ -1,0 +1,15 @@
+meta {
+  name: Update a visite
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://localhost:3333/sites/1/visites/1
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
