@@ -58,8 +58,8 @@ router
   .group(() => {
     router.get('', [SitesController, 'index'])
     router.get(':book_id', [SitesController, 'show'])
-    router.post('', [SitesController, 'store']).use(middleware.auth())
-    router.put(':book_id', [SitesController, 'update']).use(middleware.auth())
-    router.delete(':book_id', [SitesController, 'destroy']).use(middleware.auth())
+    // router.post('', [SitesController, 'store']).use(middleware.auth())
+    // router.put(':book_id', [SitesController, 'update']).use(middleware.auth())
+    // router.delete(':book_id', [SitesController, 'destroy']).use(middleware.auth())
   })
   .prefix('sites')

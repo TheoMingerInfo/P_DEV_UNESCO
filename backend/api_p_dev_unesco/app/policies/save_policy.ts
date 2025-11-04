@@ -1,7 +1,6 @@
 import User from '#models/user'
 import Save from '#models/save'
 import { BasePolicy } from '@adonisjs/bouncer'
-import type { AuthorizerResponse } from '@adonisjs/bouncer/types'
 
 export default class SavePolicy extends BasePolicy {
   private async isOwner(user: User, save: Save): Promise<boolean> {
