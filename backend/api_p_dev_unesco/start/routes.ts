@@ -16,6 +16,7 @@ import UserSavesController from '#controllers/usersaves_controller'
 import SavesController from '#controllers/saves_controller'
 import VisitesController from '#controllers/visites_controller'
 import SitesController from '#controllers/sites_controller'
+import UserVisitesController from '#controllers/uservisites_controller'
 
 // Authentication paths
 router
@@ -37,6 +38,9 @@ router
 
 // See saves per users
 router.get('users/:user_id/saves', [UserSavesController, 'show'])
+
+// See visits per users
+router.get('users/:user_id/visits?limit=:limit', [UserVisitesController, 'show'])
 
 // Add and delete saves
 router
