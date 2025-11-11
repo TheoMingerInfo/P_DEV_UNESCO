@@ -11,7 +11,6 @@ export default class UserVisitesController {
     await user.load('visites', (query) => {
       query.orderBy('date_visite', 'desc').limit(params.limit)
     })
-
     return response.ok(user.visites)
   }
 }

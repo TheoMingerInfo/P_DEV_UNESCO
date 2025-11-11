@@ -30,7 +30,6 @@ router
 // User
 router
   .group(() => {
-    router.get(':user_id', [UsersController, 'index'])
     router.put(':user_id', [UsersController, 'update']).use(middleware.auth())
     router.delete(':user_id', [UsersController, 'destroy']).use(middleware.auth())
   })

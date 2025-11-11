@@ -17,16 +17,16 @@ export default class Site extends BaseModel {
   @column()
   declare description: string
   @column()
-  declare register_date: DateTime
+  declare register_date: Date
   @column()
   declare longitude: number
   @column()
   declare latitude: number
 
   // FK
-  @column()
+  @column({ columnName: 'type_fk' })
   declare typeFK: number
-  @column()
+  @column({ columnName: 'country_fk' })
   declare countryFK: number
 
   @hasMany(() => Save)
