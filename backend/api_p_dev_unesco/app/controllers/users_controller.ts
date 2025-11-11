@@ -1,7 +1,7 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import User from '#models/user'
 import { userValidator } from '#validators/user'
-import UserPolicy from '#policies/user_policy'
+
 export default class UsersController {
   /**
    * Handle form submission for the edit action

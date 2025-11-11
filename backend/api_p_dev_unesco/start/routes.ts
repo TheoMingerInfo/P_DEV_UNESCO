@@ -17,6 +17,7 @@ import SavesController from '#controllers/saves_controller'
 import VisitesController from '#controllers/visites_controller'
 import SitesController from '#controllers/sites_controller'
 import UserVisitesController from '#controllers/uservisites_controller'
+import Country from '#models/country'
 
 // Authentication paths
 router
@@ -68,3 +69,5 @@ router
     // router.delete(':site_id', [SitesController, 'destroy']).use(middleware.auth())
   })
   .prefix('sites')
+
+router.get('countries', async () => await Country.all())

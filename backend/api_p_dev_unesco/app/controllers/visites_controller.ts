@@ -1,5 +1,3 @@
-// import type { HttpContext } from '@adonisjs/core/http'
-
 import Visite from '#models/visite'
 import VisitePolicy from '#policies/visite_policy'
 import { visiteValidator } from '#validators/visite'

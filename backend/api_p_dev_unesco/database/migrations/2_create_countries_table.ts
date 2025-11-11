@@ -8,6 +8,7 @@ export default class extends BaseSchema {
       table.increments('id')
 
       table.string('name').notNullable()
+      table.string('iso').notNullable()
 
       table
         .enum('continent', ['Europe', 'Asie', 'Amérique', 'Afrique', 'Océanie', 'Antarctique'])

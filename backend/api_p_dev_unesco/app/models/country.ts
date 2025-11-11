@@ -11,6 +11,9 @@ export default class Country extends BaseModel {
   declare name: string
 
   @column()
+  declare iso: string
+
+  @column()
   declare continent: 'Europe' | 'Asie' | 'Afrique' | 'Amérique' | 'Océanie' | 'Antarctique'
 
   @column.dateTime({ autoCreate: true })
