@@ -37,12 +37,14 @@ export default class SitesController {
 
     // return response.ok(sites)
 
-    const sites = await Site.query().orderBy('id', 'asc')
+    const sites = await Site.query().orderBy('id', 'asc').preload('country').preload('type')
     return response.ok(sites)
   }
 
   async show({ params, response }: HttpContext) {
     const site = await Site.findOrFail(params.site_id)
+    await site.load('country')
+    await site.load('type')
     return response.ok(site)
   }
 }
