@@ -5,7 +5,7 @@ import { BasePolicy } from '@adonisjs/bouncer'
 export default class VisitePolicy extends BasePolicy {
   private async isOwner(user: User, visite: Visite): Promise<boolean> {
     const rightUser = await User.query()
-      .where('id', visite.userFK)
+      .where('id', visite.userId)
       .where('id', user.id)
       .select('id')
       .first()

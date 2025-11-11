@@ -15,7 +15,7 @@ export default class SaveSeeder extends BaseSeeder {
       return
     }
 
-    const saves: { userFK: number; siteFK: number }[] = []
+    const saves: { userId: number; siteId: number }[] = []
 
     // Exemple : chaque utilisateur sauvegarde 2 sites différents
     users.forEach((user, userIndex) => {
@@ -23,11 +23,11 @@ export default class SaveSeeder extends BaseSeeder {
       const secondSite = sites[(userIndex + 1) % sites.length]
 
       // Ajout seulement si la combinaison user/site n’existe pas déjà
-      if (!saves.some((s) => s.userFK === user.id && s.siteFK === firstSite.id)) {
-        saves.push({ userFK: user.id, siteFK: firstSite.id })
+      if (!saves.some((s) => s.userId === user.id && s.siteId === firstSite.id)) {
+        saves.push({ userId: user.id, siteId: firstSite.id })
       }
-      if (!saves.some((s) => s.userFK === user.id && s.siteFK === secondSite.id)) {
-        saves.push({ userFK: user.id, siteFK: secondSite.id })
+      if (!saves.some((s) => s.userId === user.id && s.siteId === secondSite.id)) {
+        saves.push({ userId: user.id, siteId: secondSite.id })
       }
     })
 

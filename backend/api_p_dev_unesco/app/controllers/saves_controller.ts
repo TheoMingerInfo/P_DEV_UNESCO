@@ -7,14 +7,14 @@ import { HttpContext } from '@adonisjs/core/http'
 export default class SavesController {
   async store({ auth, response, params }: HttpContext) {
     // Get site fk
-    const siteFK = params.site_id
+    const siteId = params.site_id
 
     // Get user id
-    const userFK = auth.user!.id
+    const userId = auth.user!.id
 
     const save = await Save.create({
-      userFK,
-      siteFK,
+      userId,
+      siteId,
     })
     return response.created(save)
   }

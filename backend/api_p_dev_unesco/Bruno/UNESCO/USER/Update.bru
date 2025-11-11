@@ -1,18 +1,20 @@
 meta {
-  name: Update a visite
+  name: Update
   type: http
   seq: 2
 }
 
 put {
-  url: http://localhost:3333/sites/1/visites/11
+  url: http://localhost:3333/users/1
   body: json
   auth: inherit
 }
 
 body:json {
   {
-    "dateVisite": "2024-11-11"
+    "username": "admin",
+    "password": "admin",
+    "email": "admin@unesco.com"
   }
 }
 

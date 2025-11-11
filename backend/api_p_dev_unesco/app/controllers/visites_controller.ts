@@ -14,17 +14,17 @@ export default class VisitesController {
     const { dateVisite } = await request.validateUsing(visiteValidator)
 
     // Get site id
-    const siteFK = params.site_id
+    const siteId = params.site_id
 
     // Get current user
     const currentUser = auth.user!
-    const userFK = currentUser.id
+    const userId = currentUser.id
 
     // Creates the visite
     const visite = await Visite.create({
       dateVisite,
-      userFK,
-      siteFK,
+      userId,
+      siteId,
     })
     return response.created(visite)
   }
@@ -35,8 +35,8 @@ export default class VisitesController {
   async update({ params, auth, request, bouncer, response }: HttpContext) {
     // Data revocery
     const { dateVisite } = await request.validateUsing(visiteValidator)
-    const userFK = auth.user!.id
-    const siteFK = params.site_id
+    const userId = auth.user!.id
+    const siteId = params.site_id
 
     // Get the visite
     const visite = await Visite.findOrFail(params.visite_id)
@@ -49,7 +49,7 @@ export default class VisitesController {
     }
 
     // Update and save
-    visite.merge({ dateVisite, userFK, siteFK })
+    visite.merge({ dateVisite, userId, siteId })
     await visite.save()
 
     return response.ok(visite)

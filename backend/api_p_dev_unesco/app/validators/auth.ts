@@ -15,7 +15,6 @@ export const registerValidator = vine.compile(
       .maxLength(32)
       .regex(/^[a-zA-Z0-9_]+$/)
       .unique(async (query, field) => {
-        //peut être il faut enlever le "s" de users
         const user = await query.from('users').where('username', field).first()
         return !user
       }),

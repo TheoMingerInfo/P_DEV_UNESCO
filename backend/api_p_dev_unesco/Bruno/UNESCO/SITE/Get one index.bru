@@ -1,16 +1,15 @@
 meta {
-  name: Delete a save
+  name: Get one index
   type: http
   seq: 2
 }
 
-delete {
-  url: http://localhost:3333/sites/1/saves/11
+get {
+  url: http://localhost:3333/sites/1
   body: none
   auth: inherit
 }
 
 settings {
   encodeUrl: true
-  timeout: 0
 }

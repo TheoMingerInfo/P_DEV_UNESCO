@@ -1,16 +1,15 @@
 meta {
-  name: Get all saves per user
+  name: Get all
   type: http
   seq: 1
 }
 
 get {
-  url: http://localhost:3333/users/2/saves
+  url: http://localhost:3333/sites
   body: none
   auth: inherit
 }
 
 settings {
   encodeUrl: true
-  timeout: 0
 }

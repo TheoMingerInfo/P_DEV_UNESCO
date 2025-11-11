@@ -29,8 +29,8 @@ export default class SiteSeeder extends BaseSeeder {
         register_date: new Date('1979-01-01'),
         longitude: -1.5115,
         latitude: 48.636,
-        typeFK: typeArchitectural?.id || 1,
-        countryFK: france?.id || 1,
+        typeId: typeArchitectural?.id || 1,
+        countryId: france?.id || 1,
       },
       {
         name: 'Pyramides de Gizeh',
@@ -40,8 +40,8 @@ export default class SiteSeeder extends BaseSeeder {
         register_date: new Date('1979-01-01'),
         longitude: 31.1342,
         latitude: 29.9792,
-        typeFK: typeArcheologique?.id || 1,
-        countryFK: egypte?.id || 1,
+        typeId: typeArcheologique?.id || 1,
+        countryId: egypte?.id || 1,
       },
       {
         name: 'Grande Muraille de Chine',
@@ -51,8 +51,8 @@ export default class SiteSeeder extends BaseSeeder {
         register_date: new Date('1987-01-01'),
         longitude: 117.236,
         latitude: 40.6769,
-        typeFK: typeCulturel?.id || 1,
-        countryFK: chine?.id || 1,
+        typeId: typeCulturel?.id || 1,
+        countryId: chine?.id || 1,
       },
       {
         name: 'Machu Picchu',
@@ -62,8 +62,8 @@ export default class SiteSeeder extends BaseSeeder {
         register_date: new Date('1983-01-01'),
         longitude: -72.544963,
         latitude: -13.163141,
-        typeFK: typeMixte?.id || 1,
-        countryFK: perou?.id || 1,
+        typeId: typeMixte?.id || 1,
+        countryId: perou?.id || 1,
       },
       {
         name: 'Grande Barrière de corail',
@@ -73,8 +73,8 @@ export default class SiteSeeder extends BaseSeeder {
         register_date: new Date('1981-01-01'),
         longitude: 147.6992,
         latitude: -18.2871,
-        typeFK: typeNaturel?.id || 1,
-        countryFK: australie?.id || 1,
+        typeId: typeNaturel?.id || 1,
+        countryId: australie?.id || 1,
       },
       {
         name: 'Colisée de Rome',
@@ -84,8 +84,8 @@ export default class SiteSeeder extends BaseSeeder {
         register_date: new Date('1980-01-01'),
         longitude: 12.4922,
         latitude: 41.8902,
-        typeFK: typeArchitectural?.id || 1,
-        countryFK: italie?.id || 1,
+        typeId: typeArchitectural?.id || 1,
+        countryId: italie?.id || 1,
       },
       {
         name: 'Chichén Itzá',
@@ -95,8 +95,8 @@ export default class SiteSeeder extends BaseSeeder {
         register_date: new Date('1988-01-01'),
         longitude: -88.5678,
         latitude: 20.6843,
-        typeFK: typeArcheologique?.id || 1,
-        countryFK: mexique?.id || 1,
+        typeId: typeArcheologique?.id || 1,
+        countryId: mexique?.id || 1,
       },
     ])
   }

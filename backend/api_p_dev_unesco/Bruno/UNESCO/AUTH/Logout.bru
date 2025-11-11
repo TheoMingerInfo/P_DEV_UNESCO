@@ -1,11 +1,11 @@
 meta {
-  name: Delete a visite
+  name: Logout
   type: http
-  seq: 3
+  seq: 2
 }
 
-delete {
-  url: http://localhost:3333/sites/1/visites/11
+post {
+  url: http://localhost:3333/user/logout
   body: none
   auth: inherit
 }

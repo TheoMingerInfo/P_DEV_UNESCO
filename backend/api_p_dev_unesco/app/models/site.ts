@@ -24,10 +24,10 @@ export default class Site extends BaseModel {
   declare latitude: number
 
   // FK
-  @column({ columnName: 'type_fk' })
-  declare typeFK: number
-  @column({ columnName: 'country_fk' })
-  declare countryFK: number
+  @column({ columnName: 'type_id' })
+  declare typeId: number
+  @column({ columnName: 'country_id' })
+  declare countryId: number
 
   @hasMany(() => Save)
   declare saves: HasMany<typeof Save>

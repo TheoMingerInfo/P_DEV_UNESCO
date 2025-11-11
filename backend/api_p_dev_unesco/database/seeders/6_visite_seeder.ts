@@ -16,7 +16,7 @@ export default class VisiteSeeder extends BaseSeeder {
       return
     }
 
-    const visites: { userFK: number; siteFK: number; dateVisite: Date }[] = []
+    const visites: { userId: number; siteId: number; dateVisite: Date }[] = []
 
     // Chaque utilisateur visite 2 sites différents
     users.forEach((user, index) => {
@@ -24,20 +24,20 @@ export default class VisiteSeeder extends BaseSeeder {
       const secondSite = sites[(index + 2) % sites.length]
 
       // Ajout sécurisé (évite doublon sur user/site)
-      if (!visites.some((v) => v.userFK === user.id && v.siteFK === firstSite.id)) {
+      if (!visites.some((v) => v.userId === user.id && v.siteId === firstSite.id)) {
         visites.push({
-          userFK: user.id,
-          siteFK: firstSite.id,
+          userId: user.id,
+          siteId: firstSite.id,
           dateVisite: DateTime.now()
             .minus({ days: (index + 1) * 3 })
             .toJSDate(),
         })
       }
 
-      if (!visites.some((v) => v.userFK === user.id && v.siteFK === secondSite.id)) {
+      if (!visites.some((v) => v.userId === user.id && v.siteId === secondSite.id)) {
         visites.push({
-          userFK: user.id,
-          siteFK: secondSite.id,
+          userId: user.id,
+          siteId: secondSite.id,
           dateVisite: DateTime.now()
             .minus({ days: (index + 2) * 5 })
             .toJSDate(),

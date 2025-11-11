@@ -8,6 +8,6 @@ export default class UserSavesController {
     const user = await User.findOrFail(params.user_id)
     // Loading user and each saves
     await user.load('saves')
-    return response.ok(user.save)
+    return response.ok(user.saves)
   }
 }

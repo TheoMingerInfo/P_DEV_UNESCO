@@ -10,14 +10,14 @@ export default class SitesController {
       limit = 10,
       sort = 'name',
       order = 'asc',
-      countryFK,
-      typeFK,
+      countryId,
+      typeId,
       search,
     } = await request.validateUsing(getSitesQueryValidator)
 
     const query = Site.query().preload('country').preload('type')
-    if (countryFK) {
-      query.where('class_group_id', countryFK) // Filter by country ID
+    if (countryId) {
+      query.where('class_group_id', countryId) // Filter by country ID
     }
 
     // Search
@@ -34,7 +34,7 @@ export default class SitesController {
     sites.baseUrl('/sites')
 
     // Keep search parameters
-    sites.queryString({ page, limit, sort, order, countryFK, typeFK, search })
+    sites.queryString({ page, limit, sort, order, countryId, typeId, search })
 
     return response.ok(sites)
   }

@@ -9,7 +9,7 @@ import type { HasMany } from '@adonisjs/lucid/types/relations'
 import Visite from './visite.js'
 
 const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
-  uids: ['email'],
+  uids: ['username'],
   passwordColumnName: 'password',
 })
 
