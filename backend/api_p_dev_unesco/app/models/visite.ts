@@ -13,10 +13,10 @@ export default class Visite extends BaseModel {
 
   //FK
   @column()
-  declare userFK: number
+  declare userId: number
 
   @column()
-  declare siteFK: number
+  declare siteId: number
 
   @belongsTo(() => User)
   declare user: BelongsTo<typeof User>

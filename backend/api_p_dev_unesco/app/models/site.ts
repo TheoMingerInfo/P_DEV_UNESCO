@@ -17,17 +17,17 @@ export default class Site extends BaseModel {
   @column()
   declare description: string
   @column()
-  declare register_date: DateTime
+  declare register_date: Date
   @column()
   declare longitude: number
   @column()
   declare latitude: number
 
   // FK
-  @column()
-  declare typeFK: number
-  @column()
-  declare countryFK: number
+  @column({ columnName: 'type_id' })
+  declare typeId: number
+  @column({ columnName: 'country_id' })
+  declare countryId: number
 
   @hasMany(() => Save)
   declare saves: HasMany<typeof Save>

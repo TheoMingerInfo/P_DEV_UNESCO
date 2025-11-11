@@ -7,8 +7,16 @@
 |
 */
 
+import AuthController from '#controllers/auth_controller'
 import router from '@adonisjs/core/services/router'
 import { middleware } from './kernel.js'
+
+import UsersController from '#controllers/users_controller'
+import UserSavesController from '#controllers/usersaves_controller'
+import SavesController from '#controllers/saves_controller'
+import VisitesController from '#controllers/visites_controller'
+import SitesController from '#controllers/sites_controller'
+import UserVisitesController from '#controllers/uservisites_controller'
 
 // Authentication paths
 router
@@ -22,7 +30,6 @@ router
 // User
 router
   .group(() => {
-    router.get(':user_id', [UsersController, 'index'])
     router.put(':user_id', [UsersController, 'update']).use(middleware.auth())
     router.delete(':user_id', [UsersController, 'destroy']).use(middleware.auth())
   })
@@ -30,6 +37,9 @@ router
 
 // See saves per users
 router.get('users/:user_id/saves', [UserSavesController, 'show'])
+
+// See visits per users
+router.get('users/:user_id/visits?limit=:limit', [UserVisitesController, 'show'])
 
 // Add and delete saves
 router
@@ -52,9 +62,9 @@ router
 router
   .group(() => {
     router.get('', [SitesController, 'index'])
-    router.get(':book_id', [SitesController, 'show'])
-    router.post('', [SitesController, 'store']).use(middleware.auth())
-    router.put(':book_id', [SitesController, 'update']).use(middleware.auth())
-    router.delete(':book_id', [SitesController, 'destroy']).use(middleware.auth())
+    router.get(':site_id', [SitesController, 'show'])
+    // router.post('', [SitesController, 'store']).use(middleware.auth())
+    // router.put(':site_id', [SitesController, 'update']).use(middleware.auth())
+    // router.delete(':site_id', [SitesController, 'destroy']).use(middleware.auth())
   })
   .prefix('sites')
