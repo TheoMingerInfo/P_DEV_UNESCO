@@ -1,0 +1,15 @@
+meta {
+  name: Delete a save
+  type: http
+  seq: 2
+}
+
+delete {
+  url: http://localhost:3333/sites/1/saves/1
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

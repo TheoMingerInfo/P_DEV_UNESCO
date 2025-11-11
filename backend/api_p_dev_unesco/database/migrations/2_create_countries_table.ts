@@ -9,7 +9,9 @@ export default class extends BaseSchema {
 
       table.string('name').notNullable()
 
-      table.enum('continent', ['Europe', 'Asie', 'Afrique', 'Océanie', 'Antarctique']).notNullable()
+      table
+        .enum('continent', ['Europe', 'Asie', 'Amérique', 'Afrique', 'Océanie', 'Antarctique'])
+        .notNullable()
 
       table.timestamp('created_at')
       table.timestamp('updated_at')

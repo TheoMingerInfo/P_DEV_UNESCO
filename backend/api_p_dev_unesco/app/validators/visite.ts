@@ -1,7 +1,8 @@
 import vine from '@vinejs/vine'
 const visiteValidator = vine.compile(
-    vine.object({
-        visit_date: vine.date()
-    })
+  vine.object({
+    dateVisite: vine.date().before('today'),
+  })
 )
+
 export { visiteValidator }
