@@ -4,6 +4,7 @@ import fs from 'node:fs'
 import Type from '#models/type'
 import Country from '#models/country'
 import Site from '#models/site'
+import { iso2ToFrenchName } from '../utils/countries.js'
 
 /**
  * Enum strict correspondant à la colonne ENUM de ta table countries
@@ -83,13 +84,15 @@ export default class UnescoImporter {
       const image_path = (imageRaw ?? '').slice(0, 255)
 
       // ISO / pays
-      const iso =
+      const iso = (
         Array.isArray(f.iso_codes) && f.iso_codes.length > 0 ? f.iso_codes[0] : f.iso_codes
+      ).substring(0, 2)
 
-      const countryName =
-        Array.isArray(f.states_names) && f.states_names.length > 0
-          ? f.states_names[0]
-          : f.states_names
+      // const countryName =
+      //   Array.isArray(f.states_names) && f.states_names.length > 0
+      //     ? f.states_names[0]
+      //     : f.states_names
+      const countryName = iso2ToFrenchName(iso)
 
       if (!countryName) {
         skipped++
