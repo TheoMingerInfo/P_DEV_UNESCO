@@ -1,6 +1,8 @@
 import User from '#models/user'
 import { loginValidator, registerValidator } from '#validators/auth'
+import { changePasswordValidator } from '#validators/change_password'
 import type { HttpContext } from '@adonisjs/core/http'
+import hash from '@adonisjs/core/services/hash'
 
 export default class AuthController {
   // Ajout Jess
@@ -51,5 +53,27 @@ export default class AuthController {
     await User.accessTokens.delete(user, token)
     // Confirme à l'utilisateur que le logout est un succès
     return response.ok({ message: 'Logged out' })
+  }
+
+  public async changePassword({ auth, request, response }: HttpContext) {
+    // Valider les inputs
+    const { oldPassword, newPassword } = await request.validateUsing(changePasswordValidator)
+
+    // Récupérer l’utilisateur connecté
+    const user = auth.user!
+
+    // Vérifier l’ancien mot de passe
+    const isOldPasswordValid = await hash.verify(user.password, oldPassword)
+
+    if (!isOldPasswordValid) {
+      return response.unauthorized({ message: 'Ancien mot de passe incorrect' })
+    }
+
+    // Mettre à jour avec le nouveau mdp
+    // user.password = await hash.make(newPassword)
+    user.password = newPassword
+    await user.save()
+
+    return { message: 'Mot de passe mis à jour avec succès' }
   }
 }

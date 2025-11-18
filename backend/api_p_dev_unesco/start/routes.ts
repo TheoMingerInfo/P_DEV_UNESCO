@@ -71,3 +71,5 @@ router
   .prefix('sites')
 
 router.get('countries', async () => await Country.all())
+
+router.put('/auth/change-password', [AuthController, 'changePassword']).use(middleware.auth())
